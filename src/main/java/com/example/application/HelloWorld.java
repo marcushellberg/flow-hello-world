@@ -14,13 +14,10 @@ public class HelloWorld extends VerticalLayout {
 
     public HelloWorld() {
         var input = new TextField("What's your name?");
-
-
-        add(
-                new H1("Hello world"),
-                input,
-                new Button("Say hello", click ->
-                        add(new Paragraph("Hello, " + input.getValue())))
+        var button = new Button("Say hello", click ->
+                add(new Paragraph("Hello, " + input.getValue()))
         );
+
+        add(input, button);
     }
 }
